@@ -29,7 +29,8 @@ class HistoryView extends Component {
                             deliveryCost: item.deliverycost,
                             location: item.location,
                             orid: item.orid,
-                            rname: item.rname
+                            rname: item.rname,
+                            dstatus: item.dstatus
                         }
                     })
                 });

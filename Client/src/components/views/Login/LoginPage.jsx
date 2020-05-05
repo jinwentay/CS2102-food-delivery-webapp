@@ -40,7 +40,7 @@ class LoginPage extends Component {
     } else if (this.state.loginStage == 'viewLogin') {
       view = <Login viewSelector={this.changeView} userType={this.state.userType} />;
     } else {
-      view = <SignUp viewSelector={this.changeView} />;
+      view = <SignUp viewSelector={this.changeView} userType={this.state.userType} />;
     }
 
     return (

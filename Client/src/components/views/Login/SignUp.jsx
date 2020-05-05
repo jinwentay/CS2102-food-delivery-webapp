@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 
 //Semantic
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import { Button, Form, Grid, Header, Radio, Message, Segment, Select } from 'semantic-ui-react'
 
 import axios from 'axios';
 
@@ -14,6 +14,9 @@ class SignUp extends Component {
       name: '',
       email: '',
       password: '',
+      riderType: '',
+      selectedRestaurant: '',
+      restaurants: []
     };
 
     this.handleLoginClick = this.handleLoginClick.bind(this);
@@ -25,9 +28,34 @@ class SignUp extends Component {
         [name]: value
       });
     };
+    this.handleRadio = (e, {value}) => {
+      this.setState({
+        riderType: value
+      })
+    }
+    this.handleDropdown = (event, data) => {
+      this.setState({
+        [data.name]: data.value
+      });
+    };
   }
 
-
+  componentDidMount() {
+    axios.get('/restaurant/api/get/restaurantsfromdb').then(res => {
+      let data = res.data;
+      let restaurantObj = data.map(rname => {
+        return {
+          key: rname.rname,
+          text: rname.rname,
+          value: rname.rname
+        }
+      })
+      console.log("Restaurants\n", restaurantObj);
+      this.setState({
+        restaurants: restaurantObj
+      })
+    })
+  }
 
   handleLoginClick() {
     this.props.viewSelector('viewLogin');
@@ -35,15 +63,62 @@ class SignUp extends Component {
 
   handleSubmitClick() {
     const profile = {
+      userType: this.props.userType,
       name: this.state.name,
       email: this.state.email,
-      password: this.state.password
+      password: this.state.password,
+      riderType: this.state.riderType,
+      selectedRestaurant: this.state.selectedRestaurant
     }
-    axios.post('/api/posts/userprofiletodb', profile).then(res => alert("Signup Sucessful"))
+    axios.post('/api/posts/userprofiletodb', profile)
+      .then(res => alert(res.data.message))
       .catch(err => console.log(err));
+
+    //clear form inputs
+    this.setState({
+      name: '',
+      email: '',
+      password: '',
+      riderType: '',
+      selectedRestaurant: '',
+    })
   }
 
   render() {
+    const riderType = this.state.riderType;
+    const extraField = (this.props.userType === 'rider') ? 
+    <Form.Group inline>
+    <label>Rider Type</label>
+    <Form.Field
+      control={Radio}
+      label='Full-time'
+      value='FTRiders'
+      required={true}
+      checked={riderType === 'FTRiders'}
+      name="riderType"
+      onChange={this.handleRadio}
+    />
+    <Form.Field
+      control={Radio}
+      label='Part-time'
+      value='PTRiders'
+      required={true}
+      checked={riderType === 'PTRiders'}
+      name="riderType"
+      onChange={this.handleRadio}
+    />
+    </Form.Group> : (this.props.userType === 'staff') ?
+    <Form.Field
+      fluid
+      control={Select}
+      placeholder='Select Restaurant'
+      /*label='Restaurant'*/
+      name='selectedRestaurant'
+      options={this.state.restaurants}
+      required={true}
+      value={this.state.selectedRestaurant}
+      onChange={this.handleDropdown}
+    /> : <></>;
     return (
       <>
         <Segment raised>
@@ -56,6 +131,7 @@ class SignUp extends Component {
               placeholder='Name'
               required={true}
               name='name'
+              value={this.state.name}
               onChange={this.handleChange} />
             <Form.Input
               fluid
@@ -64,6 +140,7 @@ class SignUp extends Component {
               placeholder='E-mail address'
               required={true}
               name='email'
+              value={this.state.email}
               onChange={this.handleChange} />
             <Form.Input
               fluid
@@ -73,8 +150,10 @@ class SignUp extends Component {
               type='password'
               required={true}
               name='password'
+              value={this.state.password}
               onChange={this.handleChange}
             />
+            {extraField}
             <Button color='blue' fluid size='large' onClick={this.handleSubmitClick}>
               Sign Up
           </Button>

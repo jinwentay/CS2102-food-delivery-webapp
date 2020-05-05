@@ -10,13 +10,47 @@ customer.get('/api/get/getdeliverycost', (req, res, next) => {
 
 customer.get('/api/get/getorderhistory', (req, res, next) => {
     const cid = req.query.cid;
-    pool.query(`SELECT rname, orid, cartCost, fee as deliveryCost, TO_CHAR(deliveredTime, 'dd/mm/yy hh:mm') as deliveredtime, location 
+    pool.query(`SELECT rname, orid, cartCost, fee as deliveryCost, TO_CHAR(deliveredTime, 'dd/mm/yy hh:mm') as deliveredtime, location, deliver.dstatus 
     FROM Deliver NATURAL JOIN Orders NATURAL JOIN DeliveryTime
     WHERE cid=$1
-    ORDER BY orid desc
+    ORDER BY orid DESC
     LIMIT 5`, [cid],
         (q_err, q_res) => {
+            //console.log(q_err);
             res.json(q_res.rows);
+        })
+
+})
+
+customer.get('/api/get/getaddresshistory', (req, res, next) => {
+    const cid = req.query.cid;
+    pool.query(`SELECT location
+    FROM Deliver NATURAL JOIN Orders
+    WHERE cid=$1
+    ORDER BY orid DESC
+    LIMIT 5`, [cid],
+        (q_err, q_res) => {
+            if (q_res.rows == undefined) {
+                console.log(q_err);
+                res.json("")
+            } else {
+                res.json(q_res.rows);
+            }
+        })
+})
+
+customer.get('/api/get/getccnumber', (req, res, next) => {
+    const cid = req.query.cid;
+    pool.query(`SELECT creditcard
+    FROM customers
+    WHERE cid=$1`, [cid],
+        (q_err, q_res) => {
+            if (q_res.rows == undefined) {
+                console.log(q_err);
+                res.json("")
+            } else {
+                res.json(q_res.rows);
+            }
         })
 
 })
@@ -51,7 +85,6 @@ customer.post('/api/posts/insertorder', (req, res, next) => {
     pool.query(`SELECT insertandscheduleorder($1, $2, $3, $4, $5)`, [cid, rname, cartcost, location, deliverycost],
         (q_err, q_res) => {
             if (q_res == undefined) {
-                console.log(q_err);
                 res.json("MinOrder Failed")
             } else {
                 res.json(q_res.rows);
