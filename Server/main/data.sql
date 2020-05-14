@@ -401,7 +401,8 @@ VALUES
     (27, 4, 15, 200),
     (27, 5, 15, 200),
     (28, 3, 20, 300),
-    (28, 4, 20, 300);
+    (28, 4, 20, 300),
+    (28, 5, 0, 300);
 
 INSERT INTO allPromotions
     (promotiondescript, promoname, promotiontype, discount,startD, endD)
