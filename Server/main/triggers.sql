@@ -278,33 +278,33 @@ CREATE TRIGGER check_promo_start_end_trigger
 
 -- Trigger to check if that week he worked less than 10 or more than 40 
 -- Trigger to check if there are any clashes in the schedule as well
-CREATE OR REPLACE FUNCTION check_rider_schedule() returns TRIGGER
-    AS $$
-DECLARE 
-    weekHours INTEGER;
-BEGIN
-    weekHours = 0;
-    SELECT SUM(DATE_PART('hour', endt - startt)) INTO weekHours
-    FROM wws 
-    WHERE EXTRACT(week from CURRENT_DATE) = EXTRACT(week from wdate)
-    AND NEW.rid = wws.rid;
+-- CREATE OR REPLACE FUNCTION check_rider_schedule() returns TRIGGER
+--     AS $$
+-- DECLARE 
+--     weekHours INTEGER;
+-- BEGIN
+--     weekHours = 0;
+--     SELECT SUM(DATE_PART('hour', endt - startt)) INTO weekHours
+--     FROM wws 
+--     WHERE EXTRACT(week from CURRENT_DATE) = EXTRACT(week from wdate)
+--     AND NEW.rid = wws.rid;
     
-   IF weekHours < 10 THEN
-        RAISE exception 'You are working too little';
-    END IF;
-    IF weekHours > 48 THEN 
-        RAISE exception 'You are working too much';
-    END IF;
+--    IF weekHours < 10 THEN
+--         RAISE exception 'You are working too little';
+--     END IF;
+--     IF weekHours > 48 THEN 
+--         RAISE exception 'You are working too much';
+--     END IF;
 
-    RETURN NULL;
-END
-$$ LANGUAGE plpgsql;
+--     RETURN NULL;
+-- END
+-- $$ LANGUAGE plpgsql;
 
-DROP TRIGGER IF EXISTS check_rider_schedule_trigger ON wws;
-CREATE TRIGGER check_rider_schedule_trigger 
-    AFTER UPDATE OR INSERT
-    ON wws
-    FOR EACH ROW
-    EXECUTE PROCEDURE check_rider_schedule();
+-- DROP TRIGGER IF EXISTS check_rider_schedule_trigger ON wws;
+-- CREATE TRIGGER check_rider_schedule_trigger 
+--     AFTER UPDATE OR INSERT
+--     ON wws
+--     FOR EACH ROW
+--     EXECUTE PROCEDURE check_rider_schedule();
 
 

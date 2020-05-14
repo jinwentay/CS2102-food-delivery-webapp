@@ -3,7 +3,7 @@
 INSERT INTO Users
     (name, email, password, date_signup)
 VALUES
-    ('Athene Stuffins', 'astuffins0@microsoft.com', 'iCtuba', '2020-02-01'),
+    ('Athene Stuffins', 'customer@gmail.com', 'abcde', '2020-02-01'),
     ('Darbee Hadwick', 'dhadwick1@amazon.de', 'T3BAJF8', '2020-02-01'),
     ('Hollyanne Shelton', 'hshelton2@behance.net', '2PrXOPzOClr', '2020-02-01'),
     ('Angele Oxborough', 'aoxborough3@netlog.com', '66EsfeREPmJk', '2020-02-01'),
@@ -23,7 +23,7 @@ VALUES
     ('Levi Barber', 'massa.non@Curabiturdictum.edu', 'ATO66CZL6EN', '2020-04-01'),
     ('Caleb Brooks', 'iaculis@Donecfelisorci.com', 'JLT05ILN4MB', '2020-05-01'),
     ('Mark Perez', 'nibh.enim.gravida@velarcu.ca', 'NQR04WUD1HJ', '2020-05-01'),
-    ('Jade Myers', 'velit@mollis.edu', 'HNQ80CSD7GZ', '2020-05-01'),
+    ('Jade Myers', 'velit@mollis.edu', 'abcde', '2020-05-01'),
     ('Jin Wen', 'jinwenntay@gmail.com', 'abcde', '2020-01-01'),
     ('Jin Wen Tay', 'jinwen.tay@u.nus.edu', 'abcde', '2020-05-06'),
     ('Speedy Rider', 'speedyzoom@gmail.com', 'abcde', '2020-05-06'),
@@ -80,7 +80,7 @@ VALUES
     (15, 'Naknoh Thai', 'sawaddekap', 'Supper Stretch'),
     (5, 'Nippi Place', 'ONE PLAIN PRATAAAA', 'Serangoon'),
     (10, 'Sayonara', 'Irasshaimase!', 'Yishun'),
-
+    (5, 'McD', 'Finger Lickin Good', 'Changi'),
     (3, 'King Fried Chicken', 'Finger Licking Great', 'Home');
 
 --as of 21 March
@@ -112,19 +112,35 @@ VALUES
     ('Naknoh Thai', 'Thai Milk Tea', 3, 3, false, 'Thai', 3, 'Original Thai Milk Tea'),
     ('Naknoh Thai', 'Green Thai Milk Tea', 3, 3, false, 'Thai', 3, 'Original Thai Milk Tea but Green'),
     ('Naknoh Thai', 'Mango Sticky Rice', 3, 10, true, 'Thai', 4, 'Desserts is stressed spelled backwards'),
-    ('Naknoh Thai', 'Basil Pork Rice', 3, 3, false, 'Thai', 5, 'Freshest Basil with the freshset pork'),
+    ('Naknoh Thai', 'Basil Pork Rice', 4, 3, false, 'Thai', 5, 'Freshest Basil with the freshset pork'),
 
     ('King Fried Chicken', 'Signature Fried Chicken', 3, 10, true, 'Western', 18, 'Chicken fit for a king'),
     ('King Fried Chicken', 'Spicy Fried Chicken', 3, 10, true, 'Western', 18, 'Chicken fit for a king that likes spices'),
     ('King Fried Chicken', 'Oven Roasted Chicken', 3, 10, true, 'Western', 18, 'For when you want to be slightly healthier'),
     ('King Fried Chicken', 'King Coffee', 3, 10, true, 'Western', 5, 'A King needs his Koffee'),
     ('King Fried Chicken', 'Kung Pao King Chicken', 3, 10, true, 'Western', 20, 'King chicken chinese style'),
+    ('King Fried Chicken', 'Kimchi Fried Chicken', 11, 10, false, 'Western', 18, 'Korean Chicken fit for a king'),
+    ('King Fried Chicken', 'Salted Fried Chicken', 3, 10, true, 'Western', 18, 'Salt+Chicken'),
+    ('King Fried Chicken', 'Pepper Roasted Chicken', 3, 10, true, 'Western', 18, 'Pepper+Chicken'),
+    ('King Fried Chicken', 'Thai Coffee', 3, 10, true, 'Thai', 5, 'Thai Tea? No Thai Coffee'),
+    ('King Fried Chicken', 'Mexican Chicken', 3, 10, true, 'Western', 20, 'Mexican King chicken mexican style'),
 
     ('Sayonara', 'Chawamushi', 2, 20, true, 'Japanese', 3, 'Our chawamushi is the best'),
     ('Sayonara', 'Salmon don', 2, 20, true, 'Japanese', 15, 'Our salmon don is the best'),
     ('Sayonara', 'Edamame', 2, 20, true, 'Japanese', 3, 'Our edamame is the best'),
-    ('Sayonara', 'Oyako don', 2, 20, true, 'Japanese', 14, 'Our oyako don is the best')
+    ('Sayonara', 'Oyako don', 2, 20, true, 'Japanese', 14, 'Our oyako don is the best'),
+    ('Sayonara', 'Donburi', 0, 20, true, 'Japanese', 12, 'Our donburi is the best'),
+    ('Sayonara', 'Curry Rice', 5, 20, true, 'Japanese', 12, 'It is not really the best'),
+    ('Sayonara', 'Mushroom skewer', 0, 20, true, 'Japanese', 3, 'So fresh that it is still alive'),
+    ('Sayonara', 'Green Tea', 0, 20, true, 'Japanese', 1, 'Tea for aging'),
 
+    ('McD', 'Salad', 18, 20, true, 'Western', 4, 'Salad for aging'),
+    ('McD', 'Grilled Chicken Wrap', 0, 20, true, 'Western', 5, 'Chicken McWrap'),
+    ('McD', 'Salad Bowl With Chicken', 21, 20, false, 'Western', 5, 'Chicken'),
+    ('McD', 'Salad Bowl With Fish', 17, 20, true, 'Western', 5, 'Fish and salad'),
+    ('McD', 'Fresh Grilled Chicken', 0, 20, true, 'Western', 5, 'Grilled chicken'),
+    ('McD', 'Caesar Salad', 0, 20, true, 'Western', 4, 'Et Tu Brute'),
+    ('McD', 'Lettuce', 0, 20, true, 'Western', 1, 'We will pluck it for you when you order')
 ;
 
 INSERT INTO Orders
@@ -155,7 +171,17 @@ VALUES
     (15, 'Nippi Place', 8, 'Ang Mo Kio', 'Completed'),
     (15, 'Nippi Place', 8, 'Ang Mo Kio', 'Completed'),
     (4, 'Nippi Place', 8, 'Ang Mo Kio', 'Completed'),
-    (15, 'Chinese Kitchen', 24, 'Clementi', 'Completed')
+    (15, 'Chinese Kitchen', 24, 'Clementi', 'Completed'),
+
+    --25 onwards
+    (30, 'Nippi Place', 8, 'Macritche', 'Completed'),
+    (30, 'Nippi Place', 8, 'Kallang', 'Completed'),
+    (1, 'Nippi Place', 8, 'Ang Mo Kio', 'Completed'),
+    (30, 'Chinese Kitchen', 24, 'Clementi', 'Completed'),
+    (1, 'Sayonara', 9, 'Bishan', 'Completed'),
+    (1, 'Sayonara', 20, 'Bukit Panjang', 'Completed'),
+    (1, 'Sayonara', 40, 'Loyang', 'Completed'),
+    (1, 'King Fried Chicken', 18, 'Clementi', 'Completed')
 
 ;
 
@@ -185,10 +211,16 @@ VALUES
     (21, 3, 5, 'Rider has delivered your order.'),
     (22, 2, 5, 'Rider has delivered your order.'),
     (23, 3, 5, 'Rider has delivered your order.'),
-    (24, 17, 5, 'Rider has delivered your order.')
-
-
-
+    (24, 17, 5, 'Rider has delivered your order.'),
+    
+    (25, 27, 5, 'Rider has delivered your order.'),
+    (26, 18, 5, 'Rider has delivered your order.'),
+    (27, 16, 5, 'Rider has delivered your order.'),
+    (28, 16, 5, 'Rider has delivered your order.'),
+    (29, 3, 5, 'Rider has delivered your order.'),
+    (30, 2, 5, 'Rider has delivered your order.'),
+    (31, 3, 5, 'Rider has delivered your order.'),
+    (32, 17, 5, 'Rider has delivered your order.')
 ;
 
 INSERT INTO DeliveryTime
@@ -217,7 +249,16 @@ VALUES
     (21, '2020-05-03 10:23:54', '2020-05-03 10:30:03', '2020-05-03 10:32:50', '2020-05-03 10:40:24'),
     (22, '2020-05-04 19:25:54', '2020-05-04 19:31:03', '2020-05-04 19:36:50', '2020-05-04 19:46:24'),
     (23, '2020-05-04 18:23:54', '2020-05-04 18:30:03', '2020-05-04 18:32:50', '2020-05-04 18:40:24'),
-    (24, '2020-05-07 18:25:54', '2020-05-07 18:31:03', '2020-05-07 18:36:50', '2020-05-07 18:46:24')
+    (24, '2020-05-07 18:25:54', '2020-05-07 18:31:03', '2020-05-07 18:36:50', '2020-05-07 18:46:24'),
+
+    (25, '2020-05-15 10:23:54', '2020-05-15 10:30:03', '2020-05-15 10:32:50', '2020-05-15 10:40:24'),
+    (26, '2020-05-15 9:25:54', '2020-05-15 9:31:03', '2020-05-15 9:36:50', '2020-05-15 9:46:24'),
+    (27, '2020-05-15 8:23:54', '2020-05-15 8:30:03', '2020-05-15 8:32:50', '2020-05-15 8:40:24'),
+    (28, '2020-05-15 8:25:54', '2020-05-15 8:31:03', '2020-05-15 8:36:50', '2020-05-15 8:46:24'),
+    (29, '2020-05-15 10:23:54', '2020-05-15 10:30:03', '2020-05-15 10:32:50', '2020-05-15 10:40:24'),
+    (30, '2020-05-15 9:25:54', '2020-05-15 9:31:03', '2020-05-15 9:36:50', '2020-05-15 9:46:24'),
+    (31, '2020-05-15 8:23:54', '2020-05-15 8:30:03', '2020-05-15 8:32:50', '2020-05-15 8:40:24'),
+    (32, '2020-05-15 8:25:54', '2020-05-15 8:31:03', '2020-05-15 8:36:50', '2020-05-15 8:46:24')
 ;
 
 INSERT INTO OrderItems
@@ -280,7 +321,21 @@ VALUES
     (24, 'Salted Egg Rice', 1),
     (24, 'Century Egg Porridge', 1),
     (24, 'Sweet and Sour Pork Rice', 1),
-    (24, 'Tomato Noodle Soup', 1)
+    (24, 'Tomato Noodle Soup', 1),
+
+    (25, 'Plain Prata', 2),
+    (25, 'Banana Prata', 2),
+    (26, 'Roti John', 2),
+    (27, 'Teh Chino', 4),
+    (27, 'Roti John', 1),
+    (28, 'Beef Horfun', 4),
+    (29, 'Chawamushi', 3),
+    (30, 'Curry Rice', 1),
+    (30, 'Edamame', 2),
+    (30, 'Green Tea', 2),
+    (31, 'Curry Rice', 3),
+    (31, 'Green Tea', 4),
+    (32, 'Kimchi Fried Chicken', 1)
 ;
 
 -- 5 Staffs: 5,8,9,10,11, 29
@@ -303,6 +358,13 @@ VALUES
     (3, 'Horrible, I found a strand of hair', 4),
     (4, 'Food reminds me of home', 5),
     (5, 'Food was too bland', 3),
+    (6, 'Very good, Me like', 3),
+    (7, 'So oily that America wants to invade it', 3),
+    (8, 'Best Fishing Chicken', 3),
+    (9, 'Delectable', 3),
+    (10, 'Palatable', 3),
+    (11, 'Main Course was decent, 9/10. Love how fresh all the ingredients were. Good balance of flavours and spices. Soup was slightly salty but still decent.', 5),
+    (12, 'This is one of the greatest meals of my life, I recently broke up with my girlfriend and lost my job due to COVID. This meal made my day, something decent out of all these misery. Thank you.', 5),
     (13, 'Yumz I love the food here!!', 5),
     (14, 'Tastes like hometown food, khob khun ka', 5),
     (15, 'The food is bad and expensive', 2),
@@ -311,7 +373,8 @@ VALUES
     (18, 'I feel like a king now', 5),
     (19, 'I love egg prata', 4),
     (22, 'The prata is bomb', 5),
-    (24, 'Fried rice a bit dry', 3);
+    (24, 'Fried rice a bit dry', 3)
+;
 
 INSERT INTO FTRiders
     (rid)
@@ -406,17 +469,24 @@ VALUES
 INSERT INTO allPromotions
     (promotiondescript, promoname, promotiontype, discount,startD, endD)
 VALUES
-    ('Stay home and stay safe, enjoy all these food at a discounted price! Enjoy an additional $10 off your cart items courtesy of MoodPanda!', 'Stay Home Promo', 'fixed', 10 , '2020-03-23', '2020-05-26'),
-    ('May the discounts be with you! Enjoy 50% off your cart items on MoodPanda! #StayHomeStaySafe', 'May the fourth', 'percentage', 50, '2020-03-23', '2020-05-24'),
+    ('Stay home and stay safe, enjoy all these food at a discounted price! Enjoy an additional $10 off your cart items courtesy of MoodPanda!', 'Stay Home Promo', 'fixed', 10 , '2020-05-3', '2020-05-26'),
+    ('May the discounts be with you! Enjoy 50% off your cart items on MoodPanda! #StayHomeStaySafe', 'May the fourth', 'percentage', 50, '2020-04-23', '2020-05-24'),
     ('Chinese Kitchen onboarding promotion, feast on! Enjoy $2 off your food items', 'CK Promo', 'fixed', 2, '2020-05-01', '2020-05-24'),
-    ('Here is a promo code to tide you through this rough period, enjoy $5 off!', 'Promo for the King', 'fixed', 5, '2020-05-01', '2020-05-20')
+    ('Here is a promo code to tide you through this rough period, enjoy $5 off!', 'Promo for the King', 'fixed', 5, '2020-05-14', '2020-05-20'),
+    ('COVID PROMOTION 20% OFF', 'Stay Home Promo', 'percentage', 20 , '2020-05-23', '2020-05-26'),
+    ('#SupportLocal 10$ off', '$10 off', 'fixed', 10, '2020-05-23', '2020-05-24'),
+    ('Sayonara sale, literally we are going out of business $20 off', 'Sayonara $20 off', 'fixed', 20, '2020-05-01', '2020-05-24')
 ;
 
 INSERT INTO RPromotions
     (pid, rname)
 VALUES
     (3, 'Chinese Kitchen'),
-    (4, 'King Fried Chicken');
+    (4, 'King Fried Chicken'),
+    (5, 'Nippi Place'),
+    (6, 'Naknoh Thai'),
+    (7, 'Sayonara')
+;
 
 INSERT INTO FDPromotions
     (pid)
