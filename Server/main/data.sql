@@ -7,13 +7,13 @@ VALUES
     ('Darbee Hadwick', 'dhadwick1@amazon.de', 'T3BAJF8', '2020-02-01'),
     ('Hollyanne Shelton', 'hshelton2@behance.net', '2PrXOPzOClr', '2020-02-01'),
     ('Angele Oxborough', 'aoxborough3@netlog.com', '66EsfeREPmJk', '2020-02-01'),
-    ('Franciskus Moffatt', 'fmoffatt4@sfgate.com', 'kBasfn', '2020-01-01'),
+    ('Franciskus Moffatt', 'sawadeekap@gmail.com', 'thaimilktea', '2020-01-01'),
     ('Ruthie Nears', 'rnears5@fc2.com', 'ea7YdlIzyr', '2020-01-01'),
     ('Cart Esp', 'cesp6@wordpress.org', '7eZfcPkBu3T', '2020-01-01'),
-    ('Mar Fincher', 'mfincher7@noaa.gov', '2VSS1NA', '2020-01-01'),
-    ('Devondra Haresnape', 'dharesnape0@google.it', 'gPA8KFHY0zzC', '2020-01-01'),
+    ('Mar Fincher', 'songfeng@songfengco.com', 'asdfg', '2020-01-01'),
+    ('Devondra Haresnape', 'yumyum@google.it', '12345', '2020-01-01'),
     ('Wash Fish', 'wfish1@freewebs.com', 'P5Nt5P', '2020-04-01'),
-    ('Bucky Maple', 'bmaple2@hhs.gov', 'duKrn9NB', '2020-04-01'),
+    ('Bucky Maple', 'kfcftw@hotmail.com', 'P@ssw0rd', '2020-04-01'),
     ('Nerea Rosa', 'magna@fringillaestMauris.edu', 'NXN89PWN5IY', '2020-04-01'),
     ('Dahlia Dodson', 'In.ornare.sagittis@semper.co.uk', 'DTC15WZS8SM', '2020-04-01'),
     ('Ulric Casey', 'Nam@temporestac.com', 'UHY04ZIA0BL', '2020-03-01'),
@@ -212,7 +212,7 @@ VALUES
     (22, 2, 5, 'Rider has delivered your order.'),
     (23, 3, 5, 'Rider has delivered your order.'),
     (24, 17, 5, 'Rider has delivered your order.'),
-    
+
     (25, 27, 5, 'Rider has delivered your order.'),
     (26, 18, 5, 'Rider has delivered your order.'),
     (27, 16, 5, 'Rider has delivered your order.'),
@@ -373,7 +373,15 @@ VALUES
     (18, 'I feel like a king now', 5),
     (19, 'I love egg prata', 4),
     (22, 'The prata is bomb', 5),
-    (24, 'Fried rice a bit dry', 3)
+    (23, 'The prata is bombbay', 5),
+    (24, 'Fried rice a bit dry and the tea abit wet. dissapointing', 3),
+    (25, 'The prata is bomber', 5),
+    (26, 'a bit dry', 3),
+    (27, 'The tea is bomb', 5),
+    (28, 'Fried rice a bit oily', 3),
+    (29, 'Very nice', 5),
+    (30, 'This helped me get through this tough period :)', 3),
+    (31, 'Fried rice a bit dry', 3)
 ;
 
 INSERT INTO FTRiders

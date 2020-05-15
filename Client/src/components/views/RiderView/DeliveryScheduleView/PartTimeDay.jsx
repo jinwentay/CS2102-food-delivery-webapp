@@ -30,7 +30,7 @@ function PartTimeDay(props) {
         let index;
         for (let i = 0; i < props.dateOptions.length; i++) {
             if (props.dateOptions[i].value === value) {
-                index = i + 1;
+                index = i;
             }
         }
         setDate(index);
