@@ -452,13 +452,8 @@ class DeliveryScheduleTab extends Component {
 
         <Divider hidden />
         {days}
-        <Segment basic>
-          <Button.Group>
-            <Button>Clear Selection</Button>
-            <Button.Or />
+        <Segment basic>   
             <Button positive onClick={() => { this.handleConfirmPTSchedule(); }}>Save Selection</Button>
-          </Button.Group>
-
         </Segment>
       </div>
 
