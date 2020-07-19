@@ -10,11 +10,11 @@ import CustomerView from "./components/views/CustomerView/CustomerView";
 import FDSManagerView from "./components/views/FDSManagerView/FDSManagerView";
 import { Route, Switch } from "react-router-dom";
 import { LoginContext } from "./components/LoginContext";
-
+import io from 'socket.io-client';
 class App extends Component {
   constructor() {
     super();
-
+    
     this.signIn = (user) => {
       if (user != null) {
         this.setState(() => ({
@@ -53,6 +53,10 @@ class App extends Component {
       signIn: this.signIn,
       signOut: this.signOut,
     };
+  }
+
+  componentDidMount() {
+    io.connect('http://localhost:5000');
   }
 
   render() {

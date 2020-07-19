@@ -8,6 +8,7 @@ function OrderCardsGrid(props) {
         orid: props.order.orid,
         rid: props.rid
     }
+    console.log("Rider id ", props.rid);
     function handleAcceptOrder() {
         Axios.post('/rider/api/posts/acceptOrder', order)
         .then(res => {
